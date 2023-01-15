@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteMappingsManager">
+    <list>
+      <list>
+        <remote-mappings server-id="php@4a84de3f-6395-4872-b605-5ede5d2bdbcc">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/srv/meta/meta-docker/www/meta" />
+            </list>
+          </settings>
+        </remote-mappings>
+      </list>
+    </list>
+  </component>
+</project>
