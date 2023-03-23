@@ -16,30 +16,19 @@ class BookCategory
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
-
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
 
-    /**
-     * @return int|null
-     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * @return string|null
-     */
     public function getTitle(): ?string
     {
         return $this->title;
     }
 
-    /**
-     * @param string $title
-     * @return self
-     */
     public function setTitle(string $title): self
     {
         $this->title = $title;
@@ -47,18 +36,11 @@ class BookCategory
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSlug(): ?string
     {
         return $this->slug;
     }
 
-    /**
-     * @param string|null $slug
-     * @return self
-     */
     public function setSlug(?string $slug): self
     {
         $this->slug = $slug;

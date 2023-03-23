@@ -18,5 +18,4 @@ class BookCategoryController extends AbstractController
     {
         return $this->json($this->bookCategoryService->getCategory());
     }
-
 }
