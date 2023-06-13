@@ -1,0 +1,15 @@
+{
+  "items": [
+    {
+      "id": 16,
+      "title": "Harry Potter",
+      "slug": "harry-potter",
+      "image": "https:\/\/ic.pics.livejournal.com\/sasha_bogdanov\/8603983\/929961\/929961_1000.jpg",
+      "authors": [
+        "Joan Rouling"
+      ],
+      "meap": false,
+      "publicationDate": 1554066000
+    }
+  ]
+}

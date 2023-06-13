@@ -1,17 +1,17 @@
 {
   "items": [
     {
-      "id": 3,
+      "id": 6,
       "title": "Biography",
       "slug": "biography"
     },
     {
-      "id": 1,
+      "id": 5,
       "title": "Fantasy",
       "slug": "fantasy"
     },
     {
-      "id": 2,
+      "id": 4,
       "title": "Science",
       "slug": "science"
     }
