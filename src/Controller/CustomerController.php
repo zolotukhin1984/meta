@@ -3,21 +3,24 @@
 namespace App\Controller;
 
 use App\Entity\Customer;
-use App\Repository\CustomerRepository;
+use App\Service\CustomerService;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class CustomerController extends AbstractController
 {
-    public function __construct(private readonly CustomerRepository $customerRepository)
-    {
+    public function __construct(
+        private readonly CustomerService $customerService,
+        private readonly EntityManagerInterface $em
+    ) {
     }
 
-    #[Route(path: '/customer')]
-    public function index(): Response
+    #[Route(path: '/api/v1/book/customers')]
+    public function customers(): Response
     {
-        $customers = $this->customerRepository->findAll();
+        $customers = $this->customerService->getCustomers();
 
         return $this->json($customers);
     }
@@ -29,7 +32,8 @@ class CustomerController extends AbstractController
         $customer->setFirstName('Spider');
         $customer->setLastName('Man');
 
-        $this->customerRepository->save($customer, true);
+        $this->em->persist($customer);
+        $this->em->flush();
 
         return new Response();
     }

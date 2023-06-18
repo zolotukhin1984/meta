@@ -12,8 +12,8 @@ use App\Repository\BookRepository;
 class BookService
 {
     public function __construct(
-        private BookRepository $bookRepository,
-        private BookCategoryRepository $bookCategoryRepository)
+        private readonly BookRepository $bookRepository,
+        private readonly BookCategoryRepository $bookCategoryRepository)
     {
     }
 
