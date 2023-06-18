@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
-    public function __construct(private BookRepository $bookRepository)
+    public function __construct(private readonly BookRepository $bookRepository)
     {
     }
 
