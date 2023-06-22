@@ -45,9 +45,11 @@ class BookServiceTest extends TestCase
             ->willReturn(new BookCategory());
 
         $service = new BookService($bookRepository, $bookCategoryRepository);
+        $actual = $service->getBooksByCategory(130);
+
         $expected = new BookListResponse([$this->createBookItemModel()]);
 
-        $this->assertEquals($expected, $service->getBooksByCategory(130));
+        $this->assertEquals($expected, $actual);
     }
 
     private function createBookEntity(): Book

@@ -9,7 +9,7 @@ class BookControllerTest extends WebTestCase
     public function testBooksByCategory(): void
     {
         $client = static::createClient();
-        $client->request('GET', '/api/v1/category/4/books');
+        $client->request('GET', '/api/v1/category/1/books');
         $responseContent = $client->getResponse()->getContent();
 
         $this->assertResponseIsSuccessful();

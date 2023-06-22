@@ -18,7 +18,7 @@ class CustomerServiceTest extends TestCase
         $repository = $this->createMock(CustomerRepository::class);
         $repository->expects($this->once())
             ->method('findBy')
-            ->with([], ['title' => Criteria::ASC])
+            ->with([], ['last_name' => Criteria::ASC])
             ->willReturn([
                 (new Customer())
                     ->setId(7)

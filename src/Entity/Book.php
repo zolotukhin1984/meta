@@ -25,7 +25,6 @@ class Book
     #[ORM\Column(type: 'string', length: 255)]
     private ?string $image = null;
 
-
     #[ORM\Column(type: 'simple_array')]
     private array $authors;
 
@@ -36,7 +35,7 @@ class Book
     private bool $meap;
 
     /**
-     * @var Collection<Book>
+     * @var Collection<BookCategory>
      */
     #[ORM\ManyToMany(targetEntity: BookCategory::class)]
     private Collection $categories;
@@ -132,7 +131,7 @@ class Book
     }
 
     /**
-     * @return Collection<Book>
+     * @return Collection<BookCategory>
      */
     public function getCategories(): Collection
     {
@@ -140,7 +139,7 @@ class Book
     }
 
     /**
-     * @param Collection<Book> $categories
+     * @param Collection<BookCategory> $categories
      * @return $this
      */
     public function setCategories(Collection $categories): self

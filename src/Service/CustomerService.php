@@ -21,7 +21,9 @@ class CustomerService
 
         $items = array_map(
             fn (Customer $customer) => new CustomerListItem(
-                $customer->getId(), $customer->getFirstName(), $customer->getLastName()
+                $customer->getId(),
+                $customer->getFirstName(),
+                $customer->getLastName()
             ),
             $customers
         );

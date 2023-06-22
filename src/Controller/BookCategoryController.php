@@ -21,7 +21,7 @@ class BookCategoryController extends AbstractController
      *     response=200,
      *     description="Returns book categories",
      *     @Model(type=BookCategoryListResponse::class)
- *     )
+     * )
      */
     #[Route(path: 'api/v1/book/categories', methods: ['GET'])]
     public function categories(): Response

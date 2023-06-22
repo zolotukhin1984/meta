@@ -14,18 +14,18 @@ use App\Model\BookListResponse;
 
 class BookController extends AbstractController
 {
-    public function __construct(private BookService $bookService)
+    public function __construct(private readonly BookService $bookService)
     {
     }
 
     /**
      * @OA\Response(
-     *     response="200"
-     *     description="Returns books inside a category"
+     *     response="200",
+     *     description="Returns books inside a category",
      *     @Model(type=BookListResponse::class)
      * )
      */
-    #[Route(path: 'api/v1/category/{id}/books')]
+    #[Route(path: 'api/v1/category/{id}/books', methods: ['GET'])]
     public function booksByCategory(int $id): Response
     {
         try {
