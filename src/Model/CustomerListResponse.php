@@ -24,6 +24,4 @@ class CustomerListResponse
     {
         return $this->items;
     }
-
-
 }

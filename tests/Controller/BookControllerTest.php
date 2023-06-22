@@ -14,7 +14,7 @@ class BookControllerTest extends WebTestCase
 
         $this->assertResponseIsSuccessful();
         $this->assertJsonStringEqualsJsonFile(
-            __DIR__ . '/responses/BookControllerTest_testBooksByCategory.json',
+            __DIR__.'/responses/BookControllerTest_testBooksByCategory.json',
             $responseContent
         );
     }

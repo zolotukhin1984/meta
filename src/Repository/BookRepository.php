@@ -22,7 +22,6 @@ class BookRepository extends ServiceEntityRepository
     }
 
     /**
-     * @param int $id
      * @return Book[]
      */
     public function findBooksByCategoryId(int $id): array
@@ -32,7 +31,6 @@ class BookRepository extends ServiceEntityRepository
 
         return $query->getResult();
     }
-
 
     public function save(Book $entity, bool $flush = false): void
     {

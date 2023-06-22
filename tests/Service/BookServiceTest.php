@@ -11,7 +11,6 @@ use App\Repository\BookCategoryRepository;
 use App\Repository\BookRepository;
 use App\Service\BookService;
 use App\Tests\AbstractTestCase;
-use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 
 class BookServiceTest extends AbstractTestCase
@@ -61,7 +60,7 @@ class BookServiceTest extends AbstractTestCase
             ->setAuthors(['Tester'])
             ->setImage('http://meta.docker/test.png')
             ->setCategories(new ArrayCollection())
-            ->setPublicationDate(new DateTime('2020-10-10'));
+            ->setPublicationDate(new \DateTime('2020-10-10'));
 
         $this->setEntityId($book, 123);
 

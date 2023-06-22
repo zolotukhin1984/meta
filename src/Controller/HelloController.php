@@ -13,5 +13,4 @@ class HelloController extends AbstractController
     {
         return $this->json(['test' => 'hello']);
     }
-
 }

@@ -30,7 +30,6 @@ class BookCategoryRepository extends ServiceEntityRepository
         return $this->findBy([], ['title' => Criteria::ASC]);
     }
 
-
     public function save(BookCategory $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);

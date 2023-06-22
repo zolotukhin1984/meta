@@ -8,7 +8,6 @@ use App\Model\CustomerListResponse;
 use App\Repository\CustomerRepository;
 use App\Service\CustomerService;
 use App\Tests\AbstractTestCase;
-use Doctrine\Common\Collections\Criteria;
 
 class CustomerServiceTest extends AbstractTestCase
 {
@@ -26,7 +25,7 @@ class CustomerServiceTest extends AbstractTestCase
         $actual = $service->getCustomers();
 
         $expected = new CustomerListResponse([
-            new CustomerListItem(7, 'Gennady', 'Zolotukhin')
+            new CustomerListItem(7, 'Gennady', 'Zolotukhin'),
         ]);
 
         $this->assertEquals($expected, $actual);

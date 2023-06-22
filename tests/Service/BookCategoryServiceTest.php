@@ -2,14 +2,12 @@
 
 namespace App\Tests\Service;
 
-use _PHPStan_e0e4f009c\Nette\Neon\Exception;
 use App\Entity\BookCategory;
 use App\Model\BookCategoryListItem;
 use App\Model\BookCategoryListResponse;
 use App\Repository\BookCategoryRepository;
 use App\Service\BookCategoryService;
 use App\Tests\AbstractTestCase;
-use Doctrine\Common\Collections\Criteria;
 
 class BookCategoryServiceTest extends AbstractTestCase
 {
