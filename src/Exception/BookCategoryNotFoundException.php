@@ -2,10 +2,9 @@
 
 namespace App\Exception;
 
-use RuntimeException;
 use Symfony\Component\HttpFoundation\Response;
 
-class BookCategoryNotFoundException extends RuntimeException
+class BookCategoryNotFoundException extends \RuntimeException
 {
     public function __construct()
     {

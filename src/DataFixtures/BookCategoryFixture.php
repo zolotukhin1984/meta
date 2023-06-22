@@ -15,7 +15,7 @@ class BookCategoryFixture extends Fixture
     {
         $categories = [
             self::SCIENCE_CATEGORY => (new BookCategory())->setTitle('Science')->setSlug('science'),
-            self::FANTASY_CATEGORY => (new BookCategory())->setTitle('Fantasy')->setSlug('fantasy')
+            self::FANTASY_CATEGORY => (new BookCategory())->setTitle('Fantasy')->setSlug('fantasy'),
         ];
 
         foreach ($categories as $category) {

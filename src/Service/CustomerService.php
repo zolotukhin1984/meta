@@ -6,7 +6,6 @@ use App\Entity\Customer;
 use App\Model\CustomerListItem;
 use App\Model\CustomerListResponse;
 use App\Repository\CustomerRepository;
-use Doctrine\Common\Collections\Criteria;
 
 class CustomerService
 {

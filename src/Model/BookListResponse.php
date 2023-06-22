@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-class  BookListResponse
+class BookListResponse
 {
     /**
      * @var BookListItem[]

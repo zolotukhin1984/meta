@@ -3,7 +3,6 @@
 namespace App\DataFixtures;
 
 use App\Entity\Book;
-use DateTime;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
@@ -11,7 +10,6 @@ use Doctrine\Persistence\ObjectManager;
 
 class BookFixtures extends Fixture implements DependentFixtureInterface
 {
-
     public function load(ObjectManager $manager)
     {
         $scienceCategory = $this->getReference(BookCategoryFixture::SCIENCE_CATEGORY);
@@ -19,7 +17,7 @@ class BookFixtures extends Fixture implements DependentFixtureInterface
 
         $book = (new Book())
             ->setTitle('Harry Potter')
-            ->setPublicationDate(new DateTime('2019-04-01'))
+            ->setPublicationDate(new \DateTime('2019-04-01'))
             ->setMeap(false)
             ->setAuthors(['Joan Rouling'])
             ->setSlug('harry-potter')
@@ -28,13 +26,12 @@ class BookFixtures extends Fixture implements DependentFixtureInterface
 
         $manager->persist($book);
         $manager->flush();
-
     }
 
     public function getDependencies(): array
     {
         return [
-            BookCategoryFixture::class
+            BookCategoryFixture::class,
         ];
     }
 }

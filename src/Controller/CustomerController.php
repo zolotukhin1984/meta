@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Customer;
+use App\Model\CustomerListResponse;
 use App\Service\CustomerService;
 use Doctrine\ORM\EntityManagerInterface;
 use Nelmio\ApiDocBundle\Annotation\Model;
@@ -10,7 +11,6 @@ use OpenApi\Annotations as OA;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Model\CustomerListResponse;
 
 class CustomerController extends AbstractController
 {
@@ -24,6 +24,7 @@ class CustomerController extends AbstractController
      * @OA\Response(
      *     response="200",
      *     description="Returns customers",
+     *
      *     @Model(type=CustomerListResponse::class)
      * )
      */
