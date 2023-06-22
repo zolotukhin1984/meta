@@ -14,22 +14,20 @@ class CustomerServiceTest extends AbstractTestCase
 {
     public function testGetCustomers(): void
     {
+        $customer = (new Customer())->setFirstName('Gennady')->setLastName('Zolotukhin');
+        $this->setEntityId($customer, 7);
+
         $repository = $this->createMock(CustomerRepository::class);
         $repository->expects($this->once())
-            ->method('findBy')
-            ->with([], ['last_name' => Criteria::ASC])
-            ->willReturn([
-                (new Customer())
-                    ->setFirstName('Gennady')
-                    ->setLastName('Zolotukhin')
-            ]);
+            ->method('findAllSortedByLastName')
+            ->willReturn([$customer]);
 
         $service = new CustomerService($repository);
+        $actual = $service->getCustomers();
+
         $expected = new CustomerListResponse([
             new CustomerListItem(7, 'Gennady', 'Zolotukhin')
         ]);
-
-        $actual = $service->getCustomers();
 
         $this->assertEquals($expected, $actual);
     }

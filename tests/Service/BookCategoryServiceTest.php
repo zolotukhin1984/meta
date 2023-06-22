@@ -2,6 +2,7 @@
 
 namespace App\Tests\Service;
 
+use _PHPStan_e0e4f009c\Nette\Neon\Exception;
 use App\Entity\BookCategory;
 use App\Model\BookCategoryListItem;
 use App\Model\BookCategoryListResponse;
@@ -18,16 +19,14 @@ class BookCategoryServiceTest extends AbstractTestCase
         $this->setEntityId($category, 7);
 
         $repository = $this->createMock(BookCategoryRepository::class);
-
         $repository->expects($this->once())
-            ->method('findBy')
-            ->with([], ['title' => Criteria::ASC])
+            ->method('findAllSortedByTitle')
             ->willReturn([$category]);
 
         $service = new BookCategoryService($repository);
+        $actual = $service->getCategories();
 
         $expected = new BookCategoryListResponse([new BookCategoryListItem(7, 'Test', 'test')]);
-        $actual = $service->getCategories();
 
         $this->assertEquals($expected, $actual);
     }

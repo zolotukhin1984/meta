@@ -33,6 +33,7 @@ class BookRepository extends ServiceEntityRepository
         return $query->getResult();
     }
 
+
     public function save(Book $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);

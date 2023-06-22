@@ -17,7 +17,7 @@ class CustomerService
 
     public function getCustomers(): CustomerListResponse
     {
-        $customers = $this->customerRepository->findBy([], ['last_name' => Criteria::ASC]);
+        $customers = $this->customerRepository->findAllSortedByLastName();
 
         $items = array_map(
             fn (Customer $customer) => new CustomerListItem(
