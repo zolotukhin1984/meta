@@ -14,13 +14,15 @@ class BookCategoryService
     {
     }
 
-    public function getCategory(): BookCategoryListResponse
+    public function getCategories(): BookCategoryListResponse
     {
         $categories = $this->bookCategoryRepository->findBy([], ['title' => Criteria::ASC]);
 
         $items = array_map(
             fn (BookCategory $bookCategory) => new BookCategoryListItem(
-                $bookCategory->getId(), $bookCategory->getTitle(), $bookCategory->getSlug()
+                $bookCategory->getId(),
+                $bookCategory->getTitle(),
+                $bookCategory->getSlug()
             ),
             $categories
         );

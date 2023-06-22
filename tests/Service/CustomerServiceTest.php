@@ -3,15 +3,14 @@
 namespace App\Tests\Service;
 
 use App\Entity\Customer;
-use App\Model\BookListItem;
 use App\Model\CustomerListItem;
 use App\Model\CustomerListResponse;
 use App\Repository\CustomerRepository;
 use App\Service\CustomerService;
+use App\Tests\AbstractTestCase;
 use Doctrine\Common\Collections\Criteria;
-use PHPUnit\Framework\TestCase;
 
-class CustomerServiceTest extends TestCase
+class CustomerServiceTest extends AbstractTestCase
 {
     public function testGetCustomers(): void
     {
@@ -21,7 +20,6 @@ class CustomerServiceTest extends TestCase
             ->with([], ['last_name' => Criteria::ASC])
             ->willReturn([
                 (new Customer())
-                    ->setId(7)
                     ->setFirstName('Gennady')
                     ->setLastName('Zolotukhin')
             ]);
